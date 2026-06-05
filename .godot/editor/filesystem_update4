@@ -1,5 +1,3 @@
 res://default_env.tres
 res://scenes/InterfaceMain.tscn
 res://scripts/InterfaceMain.gd
-res://scenes/interface_main.tscn
-res://resources/theme_interface.tres

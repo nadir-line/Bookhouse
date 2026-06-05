@@ -1,0 +1,92 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfvwsmiiwa8cr"]
+
+[ext_resource type="Theme" path="res://resources/ThemeInterface.tres" id="1"]
+[ext_resource type="Script" uid="uid://clv1b3tr7lqng" path="res://scripts/InterfaceMain.gd" id="2"]
+
+[node name="InterfaceMain" type="VFlowContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1")
+script = ExtResource("2")
+
+[node name="CurrentFunds" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("1")
+text = "Funds: "
+
+[node name="CurrentPaper" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("1")
+text = "Paper: "
+
+[node name="CurrentInk" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("1")
+text = "Ink: "
+
+[node name="CurrentBooks" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("1")
+text = "Books: "
+
+[node name="OptionsPaper" type="HFlowContainer" parent="."]
+layout_mode = 2
+
+[node name="QtyPaper" type="SpinBox" parent="OptionsPaper"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1")
+prefix = "Paper:"
+
+[node name="BuyPaper" type="Button" parent="OptionsPaper"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Buy"
+
+[node name="OptionsInk" type="HFlowContainer" parent="."]
+layout_mode = 2
+
+[node name="QtyInk" type="SpinBox" parent="OptionsInk"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1")
+prefix = "Ink:"
+
+[node name="BuyInk" type="Button" parent="OptionsInk"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Buy"
+
+[node name="OptionsBooks" type="HFlowContainer" parent="."]
+layout_mode = 2
+
+[node name="QtyBooks" type="SpinBox" parent="OptionsBooks"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1")
+prefix = "Books:"
+
+[node name="MakeBooks" type="Button" parent="OptionsBooks"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Make"
+
+[node name="SellBooks" type="Button" parent="OptionsBooks"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sell"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="button_down" from="OptionsPaper/BuyPaper" to="." method="_on_Buy_Paper_button_down"]
+[connection signal="button_down" from="OptionsInk/BuyInk" to="." method="_on_Buy_Ink_button_down"]
+[connection signal="button_down" from="OptionsBooks/MakeBooks" to="." method="_on_Make_Books_button_down"]
+[connection signal="button_down" from="OptionsBooks/SellBooks" to="." method="_on_Sell_Books_button_down"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,7 +1,0 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://f122d605ptmx"]
-
-[ext_resource type="FontFile" uid="uid://bcquki5etjwlb" path="res://assets/fonts/B612Mono-Regular.ttf" id="1_6rxof"]
-
-[resource]
-default_font = ExtResource("1_6rxof")
-default_font_size = 16
