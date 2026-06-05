@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfvwsmiiwa8cr"]
+[gd_scene format=3 uid="uid://dfvwsmiiwa8cr"]
 
 [ext_resource type="Theme" path="res://resources/ThemeInterface.tres" id="1"]
 [ext_resource type="Script" uid="uid://clv1b3tr7lqng" path="res://scripts/InterfaceMain.gd" id="2"]
 
-[node name="InterfaceMain" type="VFlowContainer"]
+[node name="InterfaceMain" type="VFlowContainer" unique_id=84392209]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -12,77 +12,77 @@ size_flags_vertical = 3
 theme = ExtResource("1")
 script = ExtResource("2")
 
-[node name="CurrentFunds" type="Label" parent="."]
+[node name="CurrentFunds" type="Label" parent="." unique_id=133853227]
 layout_mode = 2
 theme = ExtResource("1")
 text = "Funds: "
 
-[node name="CurrentPaper" type="Label" parent="."]
+[node name="CurrentPaper" type="Label" parent="." unique_id=1329043748]
 layout_mode = 2
 theme = ExtResource("1")
 text = "Paper: "
 
-[node name="CurrentInk" type="Label" parent="."]
+[node name="CurrentInk" type="Label" parent="." unique_id=1117923476]
 layout_mode = 2
 theme = ExtResource("1")
 text = "Ink: "
 
-[node name="CurrentBooks" type="Label" parent="."]
+[node name="CurrentBooks" type="Label" parent="." unique_id=1572623679]
 layout_mode = 2
 theme = ExtResource("1")
 text = "Books: "
 
-[node name="OptionsPaper" type="HFlowContainer" parent="."]
+[node name="OptionsPaper" type="HFlowContainer" parent="." unique_id=2078852095]
 layout_mode = 2
 
-[node name="QtyPaper" type="SpinBox" parent="OptionsPaper"]
+[node name="QtyPaper" type="SpinBox" parent="OptionsPaper" unique_id=928175628]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1")
 prefix = "Paper:"
 
-[node name="BuyPaper" type="Button" parent="OptionsPaper"]
+[node name="BuyPaper" type="Button" parent="OptionsPaper" unique_id=1187295043]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Buy"
 
-[node name="OptionsInk" type="HFlowContainer" parent="."]
+[node name="OptionsInk" type="HFlowContainer" parent="." unique_id=1603982199]
 layout_mode = 2
 
-[node name="QtyInk" type="SpinBox" parent="OptionsInk"]
+[node name="QtyInk" type="SpinBox" parent="OptionsInk" unique_id=134087782]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1")
 prefix = "Ink:"
 
-[node name="BuyInk" type="Button" parent="OptionsInk"]
+[node name="BuyInk" type="Button" parent="OptionsInk" unique_id=2146224671]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Buy"
 
-[node name="OptionsBooks" type="HFlowContainer" parent="."]
+[node name="OptionsBooks" type="HFlowContainer" parent="." unique_id=2132236016]
 layout_mode = 2
 
-[node name="QtyBooks" type="SpinBox" parent="OptionsBooks"]
+[node name="QtyBooks" type="SpinBox" parent="OptionsBooks" unique_id=1240609466]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1")
 prefix = "Books:"
 
-[node name="MakeBooks" type="Button" parent="OptionsBooks"]
+[node name="MakeBooks" type="Button" parent="OptionsBooks" unique_id=789521227]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Make"
 
-[node name="SellBooks" type="Button" parent="OptionsBooks"]
+[node name="SellBooks" type="Button" parent="OptionsBooks" unique_id=1220381253]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Sell"
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1386416223]
 autostart = true
 
 [connection signal="button_down" from="OptionsPaper/BuyPaper" to="." method="_on_Buy_Paper_button_down"]
