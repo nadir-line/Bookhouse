@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://dqftl5v3vaabt" path="res://assets/Spritess/Paper.png" id="4_q7hj1"]
 [ext_resource type="Texture2D" uid="uid://dn24nixohfgfw" path="res://assets/Spritess/Ink Quill.png" id="5_p3kdg"]
 [ext_resource type="Texture2D" uid="uid://buv0gfwgcupgn" path="res://assets/Spritess/Book.png" id="6_t8sor"]
+[ext_resource type="Script" uid="uid://cru8ku8d04dcs" path="res://scenes/PaperShortcut.gd" id="7_t8sor"]
+[ext_resource type="Script" uid="uid://dx6shtdmt4qrk" path="res://scenes/InkShortcut.gd" id="8_m5yi1"]
+[ext_resource type="Script" uid="uid://cbbba1tuj54ht" path="res://scenes/BooksShortcut.gd" id="9_atxy4"]
 
 [node name="InterfaceMain" type="VFlowContainer" unique_id=84392209]
 anchors_preset = 15
@@ -65,6 +68,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1")
 prefix = "Paper:"
+script = ExtResource("7_t8sor")
 
 [node name="BuyPaper" type="Button" parent="OptionsPaper" unique_id=1187295043]
 layout_mode = 2
@@ -80,6 +84,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1")
 prefix = "Ink:"
+script = ExtResource("8_m5yi1")
 
 [node name="BuyInk" type="Button" parent="OptionsInk" unique_id=2146224671]
 layout_mode = 2
@@ -95,6 +100,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1")
 prefix = "Books:"
+script = ExtResource("9_atxy4")
 
 [node name="MakeBooks" type="Button" parent="OptionsBooks" unique_id=789521227]
 layout_mode = 2

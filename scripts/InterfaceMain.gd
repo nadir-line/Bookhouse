@@ -37,20 +37,29 @@ func _process(delta):
 #		)
 
 func _on_Buy_Paper_button_down(): 
-	current_funds -= $OptionsPaper/QtyPaper.value * funds_to_paper_ratio
-	current_paper += $OptionsPaper/QtyPaper.value
+	if(current_funds >= 0):
+		current_funds -= $OptionsPaper/QtyPaper.value * funds_to_paper_ratio
+		current_paper += $OptionsPaper/QtyPaper.value
+	else:
+		return
 	$OptionsPaper/QtyPaper.value = 0
 
 func _on_Buy_Ink_button_down():
-	current_funds -= $OptionsInk/QtyInk.value * funds_to_ink_ratio
-	current_ink += $OptionsInk/QtyInk.value
+	if(current_funds >= 0):
+		current_funds -= $OptionsInk/QtyInk.value * funds_to_ink_ratio
+		current_ink += $OptionsInk/QtyInk.value
+	else: 
+		return
 	$OptionsInk/QtyInk.value = 0
 
 
 func _on_Make_Books_button_down():
-	current_ink -= $OptionsBooks/QtyBooks.value * ink_to_books_ratio
-	current_paper -= $OptionsBooks/QtyBooks.value * paper_to_books_ratio
-	current_books += $OptionsBooks/QtyBooks.value
+	if(current_ink && current_paper >= 0):
+		current_ink -= $OptionsBooks/QtyBooks.value * ink_to_books_ratio
+		current_paper -= $OptionsBooks/QtyBooks.value * paper_to_books_ratio
+		current_books += $OptionsBooks/QtyBooks.value
+	else: 
+		return
 	$OptionsBooks/QtyBooks.value = 0
 
 func _on_Sell_Books_button_down():
