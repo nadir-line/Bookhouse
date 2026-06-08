@@ -2,6 +2,10 @@
 
 [ext_resource type="Theme" path="res://resources/ThemeInterface.tres" id="1"]
 [ext_resource type="Script" uid="uid://clv1b3tr7lqng" path="res://scripts/InterfaceMain.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dynct4fk4rq2w" path="res://assets/Spritess/Moneyy.png" id="3_8xuho"]
+[ext_resource type="Texture2D" uid="uid://dqftl5v3vaabt" path="res://assets/Spritess/Paper.png" id="4_q7hj1"]
+[ext_resource type="Texture2D" uid="uid://dn24nixohfgfw" path="res://assets/Spritess/Ink Quill.png" id="5_p3kdg"]
+[ext_resource type="Texture2D" uid="uid://buv0gfwgcupgn" path="res://assets/Spritess/Book.png" id="6_t8sor"]
 
 [node name="InterfaceMain" type="VFlowContainer" unique_id=84392209]
 anchors_preset = 15
@@ -17,20 +21,40 @@ layout_mode = 2
 theme = ExtResource("1")
 text = "Funds: "
 
+[node name="Sprite2D" type="Sprite2D" parent="CurrentFunds" unique_id=1195529731]
+position = Vector2(380, 10)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("3_8xuho")
+
 [node name="CurrentPaper" type="Label" parent="." unique_id=1329043748]
 layout_mode = 2
 theme = ExtResource("1")
 text = "Paper: "
+
+[node name="Sprite2D" type="Sprite2D" parent="CurrentPaper" unique_id=2012077495]
+position = Vector2(380, 10)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("4_q7hj1")
 
 [node name="CurrentInk" type="Label" parent="." unique_id=1117923476]
 layout_mode = 2
 theme = ExtResource("1")
 text = "Ink: "
 
+[node name="Sprite2D" type="Sprite2D" parent="CurrentInk" unique_id=721023359]
+position = Vector2(380, 10)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("5_p3kdg")
+
 [node name="CurrentBooks" type="Label" parent="." unique_id=1572623679]
 layout_mode = 2
 theme = ExtResource("1")
 text = "Books: "
+
+[node name="Sprite2D" type="Sprite2D" parent="CurrentBooks" unique_id=1442828967]
+position = Vector2(380, 10)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("6_t8sor")
 
 [node name="OptionsPaper" type="HFlowContainer" parent="." unique_id=2078852095]
 layout_mode = 2
