@@ -9,6 +9,7 @@ var current_funds : float = 0
 var current_paper : float = 0
 var current_ink : float = 0
 var current_books : float = 0
+var current_wood : float = 0
 
 var funds_to_paper_ratio : float = 1
 var funds_to_ink_ratio : float = 1
@@ -18,6 +19,8 @@ var paper_to_books_ratio : float = 1
 
 var books_to_funds_ratio : float = 5
 
+var funds_to_wood_ratio : float = 2
+# var funds_to_wood_ratio : float = 1
 
 
 # Called when the node enters the scene tree for the first time.
@@ -65,6 +68,14 @@ func _on_Make_Books_button_down():
 func _on_Sell_Books_button_down():
 	current_books -= $OptionsBooks/QtyBooks.value
 	current_funds += $OptionsBooks/QtyBooks.value * books_to_funds_ratio
+
+func _on_Buy_Wood_button_down(): 
+	if(current_funds >= 0):
+		current_funds -= $OptionsWood/QtyWood.value * funds_to_wood_ratio
+		current_wood += $OptionsWood/QtyWood.value
+	else:
+		return
+	$OptionsWood/QtyWood.value = 0
 
 func _on_Timer_timeout():
 	$CurrentFunds.text = "Funds: %0.2f" % [current_funds]

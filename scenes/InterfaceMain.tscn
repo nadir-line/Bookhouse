@@ -9,6 +9,9 @@
 [ext_resource type="Script" uid="uid://cru8ku8d04dcs" path="res://scenes/PaperShortcut.gd" id="7_t8sor"]
 [ext_resource type="Script" uid="uid://dx6shtdmt4qrk" path="res://scenes/InkShortcut.gd" id="8_m5yi1"]
 [ext_resource type="Script" uid="uid://cbbba1tuj54ht" path="res://scenes/BooksShortcut.gd" id="9_atxy4"]
+[ext_resource type="Texture2D" uid="uid://dbp3vrjs4xndn" path="res://assets/Spritess/Wood.png" id="10_dnlm2"]
+[ext_resource type="Texture2D" uid="uid://drln3k6dg4gd3" path="res://assets/Spritess/Metal.png" id="11_vf3i2"]
+[ext_resource type="Texture2D" uid="uid://calkxr3q3f4dx" path="res://assets/Spritess/Tools.png" id="12_hm0cs"]
 
 [node name="InterfaceMain" type="VFlowContainer" unique_id=84392209]
 anchors_preset = 15
@@ -112,11 +115,104 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Sell"
 
-[node name="Timer" type="Timer" parent="." unique_id=1386416223]
+[node name="CurrentFunds2" type="Label" parent="." unique_id=138581224]
+layout_mode = 2
+theme = ExtResource("1")
+text = "Funds: "
+
+[node name="Sprite2D" type="Sprite2D" parent="CurrentFunds2" unique_id=133847449]
+position = Vector2(380, 10)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("3_8xuho")
+
+[node name="CurrentWood" type="Label" parent="." unique_id=1367403946]
+layout_mode = 2
+theme = ExtResource("1")
+text = "Wood: "
+
+[node name="Sprite2D" type="Sprite2D" parent="CurrentWood" unique_id=2132685520]
+position = Vector2(380, 10)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("10_dnlm2")
+
+[node name="CurrentMetal" type="Label" parent="." unique_id=1338926911]
+layout_mode = 2
+theme = ExtResource("1")
+text = "Metal: "
+
+[node name="Sprite2D" type="Sprite2D" parent="CurrentMetal" unique_id=52572202]
+position = Vector2(380, 10)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("11_vf3i2")
+
+[node name="CurrentTools" type="Label" parent="." unique_id=256263013]
+layout_mode = 2
+theme = ExtResource("1")
+text = "Books: "
+
+[node name="Sprite2D" type="Sprite2D" parent="CurrentTools" unique_id=19889915]
+position = Vector2(380, 10)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("12_hm0cs")
+
+[node name="OptionsWood" type="HFlowContainer" parent="." unique_id=799626683]
+layout_mode = 2
+
+[node name="QtyWood" type="SpinBox" parent="OptionsWood" unique_id=792014]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1")
+prefix = "Wood:"
+script = ExtResource("7_t8sor")
+
+[node name="BuyWood" type="Button" parent="OptionsWood" unique_id=749030916]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Buy"
+
+[node name="OptionsMetal" type="HFlowContainer" parent="." unique_id=682049318]
+layout_mode = 2
+
+[node name="QtyMetal" type="SpinBox" parent="OptionsMetal" unique_id=2040779044]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1")
+prefix = "Metal:"
+script = ExtResource("8_m5yi1")
+
+[node name="BuyMetal" type="Button" parent="OptionsMetal" unique_id=255748436]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Buy"
+
+[node name="OptionsTools" type="HFlowContainer" parent="." unique_id=1703006746]
+layout_mode = 2
+
+[node name="QtyTools" type="SpinBox" parent="OptionsTools" unique_id=1419787175]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1")
+prefix = "Tools:"
+script = ExtResource("9_atxy4")
+
+[node name="MakeTools" type="Button" parent="OptionsTools" unique_id=425719592]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Make"
+
+[node name="SellTools" type="Button" parent="OptionsTools" unique_id=2009005880]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sell"
+
+[node name="Timer" type="Timer" parent="OptionsTools" unique_id=1386416223]
 autostart = true
 
 [connection signal="button_down" from="OptionsPaper/BuyPaper" to="." method="_on_Buy_Paper_button_down"]
 [connection signal="button_down" from="OptionsInk/BuyInk" to="." method="_on_Buy_Ink_button_down"]
 [connection signal="button_down" from="OptionsBooks/MakeBooks" to="." method="_on_Make_Books_button_down"]
 [connection signal="button_down" from="OptionsBooks/SellBooks" to="." method="_on_Sell_Books_button_down"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="OptionsTools/Timer" to="." method="_on_Timer_timeout"]
