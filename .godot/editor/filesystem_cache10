@@ -1,9 +1,9 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1781004318
-default_env.tres::Environment::3776670637809802432::1781004318::0::1::::<><><>0<>0<><>::
+::res://::1781006231
+CraftingMain.tscn::PackedScene::1452212228088588657::1781003190::0::1::::<><><>0<>0<><>::uid://dfvwsmiiwa8cr::::res://scenes/InterfaceMain.tscn
+default_env.tres::Environment::3776670637809802432::1781005992::0::1::::<><><>0<>0<><>::
 icon.png::CompressedTexture2D::6759591457322222470::1780917777::1780917960::1::::<><><>0<>0<>08cafc2568ab37a6887385edd1e3911e<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 README.md::TextFile::-1::1780917777::0::1::::<><><>0<>0<><>::
-CraftingMain.tscn::PackedScene::1452212228088588657::1781003190::0::1::::<><><>0<>0<><>::uid://dfvwsmiiwa8cr::::res://scenes/InterfaceMain.tscn
 ::res://assets/::1780917984
 ::res://assets/fonts/::1780917959
 B612Mono-Bold.ttf::FontFile::6782368128355222468::1780917777::1780917959::1::::<><><>0<>0<>9a389de0cc046463f0dcafabfc193f90<>res://.godot/imported/B612Mono-Bold.ttf-973509b258212c202799835a9c60280e.fontdata::
@@ -22,10 +22,10 @@ Wood.png::CompressedTexture2D::7262155046155398703::1781004681::1781004681::1:::
 ::res://resources/::1780917777
 FontInterface_Size1.tres::FontFile::-1::1780917777::0::1::::<><><>0<>0<><>::res://assets/fonts/B612Mono-Regular.ttf
 ThemeInterface.tres::Theme::-1::1780917777::0::1::::<><><>0<>0<><>::res://resources/FontInterface_Size1.tres
-::res://scenes/::1781004313
-InterfaceMain.tscn::PackedScene::7554926763267428793::1781004313::0::1::::<><><>0<>0<><>::res://resources/ThemeInterface.tres<>uid://clv1b3tr7lqng::::res://scripts/InterfaceMain.gd<>uid://dynct4fk4rq2w::::res://assets/Spritess/Moneyy.png<>uid://dqftl5v3vaabt::::res://assets/Spritess/Paper.png<>uid://dn24nixohfgfw::::res://assets/Spritess/Ink Quill.png<>uid://buv0gfwgcupgn::::res://assets/Spritess/Book.png<>uid://cru8ku8d04dcs::::res://scenes/PaperShortcut.gd<>uid://dx6shtdmt4qrk::::res://scenes/InkShortcut.gd<>uid://cbbba1tuj54ht::::res://scenes/BooksShortcut.gd
-PaperShortcut.gd::GDScript::6009361884630697082::1780946314::0::1::::<>SpinBox<><>0<>0<><>::
-InkShortcut.gd::GDScript::8838707574706872036::1780946494::0::1::::<>SpinBox<><>0<>0<><>::
+::res://scenes/::1781005992
 BooksShortcut.gd::GDScript::4845156701651396789::1780946571::0::1::::<>SpinBox<><>0<>0<><>::
-::res://scripts/::1781003920
-InterfaceMain.gd::GDScript::5589852508666350776::1781003920::0::1::::<>VFlowContainer<><>0<>0<><>::
+InkShortcut.gd::GDScript::8838707574706872036::1780946494::0::1::::<>SpinBox<><>0<>0<><>::
+InterfaceMain.tscn::PackedScene::7554926763267428793::1781005992::0::1::::<><><>0<>0<><>::res://resources/ThemeInterface.tres<>uid://clv1b3tr7lqng::::res://scripts/InterfaceMain.gd<>uid://dynct4fk4rq2w::::res://assets/Spritess/Moneyy.png<>uid://dqftl5v3vaabt::::res://assets/Spritess/Paper.png<>uid://dn24nixohfgfw::::res://assets/Spritess/Ink Quill.png<>uid://buv0gfwgcupgn::::res://assets/Spritess/Book.png<>uid://cru8ku8d04dcs::::res://scenes/PaperShortcut.gd<>uid://dx6shtdmt4qrk::::res://scenes/InkShortcut.gd<>uid://cbbba1tuj54ht::::res://scenes/BooksShortcut.gd<>uid://dbp3vrjs4xndn::::res://assets/Spritess/Wood.png<>uid://drln3k6dg4gd3::::res://assets/Spritess/Metal.png<>uid://calkxr3q3f4dx::::res://assets/Spritess/Tools.png
+PaperShortcut.gd::GDScript::6009361884630697082::1780946314::0::1::::<>SpinBox<><>0<>0<><>::
+::res://scripts/::1781005828
+InterfaceMain.gd::GDScript::5589852508666350776::1781005828::0::1::::<>VFlowContainer<><>0<>0<><>::

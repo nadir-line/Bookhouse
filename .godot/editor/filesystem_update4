@@ -4,4 +4,6 @@ res://scripts/InterfaceMain.gd
 res://scenes/PaperShortcut.gd
 res://scenes/InkShortcut.gd
 res://scenes/BooksShortcut.gd
-res://CraftingMain.tscn
+res://scenes/MetalShortcut.gd
+res://scenes/WoodShortcut.gd
+res://scenes/ToolsShortcut.gd

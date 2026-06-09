@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://dbp3vrjs4xndn" path="res://assets/Spritess/Wood.png" id="10_dnlm2"]
 [ext_resource type="Texture2D" uid="uid://drln3k6dg4gd3" path="res://assets/Spritess/Metal.png" id="11_vf3i2"]
 [ext_resource type="Texture2D" uid="uid://calkxr3q3f4dx" path="res://assets/Spritess/Tools.png" id="12_hm0cs"]
+[ext_resource type="Script" uid="uid://8d2shkoflrnw" path="res://scenes/WoodShortcut.gd" id="13_ekh0m"]
+[ext_resource type="Script" uid="uid://d2lyyn7qnh4dx" path="res://scenes/MetalShortcut.gd" id="13_hm0cs"]
+[ext_resource type="Script" uid="uid://d3vb72caa5c55" path="res://scenes/ToolsShortcut.gd" id="15_168ww"]
 
 [node name="InterfaceMain" type="VFlowContainer" unique_id=84392209]
 anchors_preset = 15
@@ -164,7 +167,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1")
 prefix = "Wood:"
-script = ExtResource("7_t8sor")
+script = ExtResource("13_ekh0m")
 
 [node name="BuyWood" type="Button" parent="OptionsWood" unique_id=749030916]
 layout_mode = 2
@@ -180,7 +183,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1")
 prefix = "Metal:"
-script = ExtResource("8_m5yi1")
+script = ExtResource("13_hm0cs")
 
 [node name="BuyMetal" type="Button" parent="OptionsMetal" unique_id=255748436]
 layout_mode = 2
@@ -196,7 +199,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1")
 prefix = "Tools:"
-script = ExtResource("9_atxy4")
+script = ExtResource("15_168ww")
 
 [node name="MakeTools" type="Button" parent="OptionsTools" unique_id=425719592]
 layout_mode = 2
@@ -215,4 +218,8 @@ autostart = true
 [connection signal="button_down" from="OptionsInk/BuyInk" to="." method="_on_Buy_Ink_button_down"]
 [connection signal="button_down" from="OptionsBooks/MakeBooks" to="." method="_on_Make_Books_button_down"]
 [connection signal="button_down" from="OptionsBooks/SellBooks" to="." method="_on_Sell_Books_button_down"]
+[connection signal="button_down" from="OptionsWood/BuyWood" to="." method="_on_buy_wood_button_down"]
+[connection signal="button_down" from="OptionsMetal/BuyMetal" to="." method="_on_buy_metal_button_down"]
+[connection signal="button_down" from="OptionsTools/MakeTools" to="." method="_on_make_tools_button_down"]
+[connection signal="button_down" from="OptionsTools/SellTools" to="." method="_on_sell_tools_button_down"]
 [connection signal="timeout" from="OptionsTools/Timer" to="." method="_on_Timer_timeout"]
