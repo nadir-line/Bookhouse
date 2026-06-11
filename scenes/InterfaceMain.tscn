@@ -6,111 +6,473 @@
 [ext_resource type="Texture2D" uid="uid://dqftl5v3vaabt" path="res://assets/Spritess/Paper.png" id="4_q7hj1"]
 [ext_resource type="Texture2D" uid="uid://dn24nixohfgfw" path="res://assets/Spritess/Ink Quill.png" id="5_p3kdg"]
 [ext_resource type="Texture2D" uid="uid://buv0gfwgcupgn" path="res://assets/Spritess/Book.png" id="6_t8sor"]
+[ext_resource type="Script" uid="uid://cru8ku8d04dcs" path="res://scenes/PaperShortcut.gd" id="7_t8sor"]
+[ext_resource type="Script" uid="uid://dx6shtdmt4qrk" path="res://scenes/InkShortcut.gd" id="8_m5yi1"]
+[ext_resource type="Script" uid="uid://cbbba1tuj54ht" path="res://scenes/BooksShortcut.gd" id="9_atxy4"]
+[ext_resource type="Texture2D" uid="uid://dbp3vrjs4xndn" path="res://assets/Spritess/Wood.png" id="10_dnlm2"]
+[ext_resource type="Texture2D" uid="uid://drln3k6dg4gd3" path="res://assets/Spritess/Metal.png" id="11_vf3i2"]
+[ext_resource type="Texture2D" uid="uid://calkxr3q3f4dx" path="res://assets/Spritess/Tools.png" id="12_hm0cs"]
+[ext_resource type="Script" uid="uid://8d2shkoflrnw" path="res://scenes/WoodShortcut.gd" id="13_ekh0m"]
+[ext_resource type="Script" uid="uid://d2lyyn7qnh4dx" path="res://scenes/MetalShortcut.gd" id="13_hm0cs"]
+[ext_resource type="Script" uid="uid://d3vb72caa5c55" path="res://scenes/ToolsShortcut.gd" id="15_168ww"]
+[ext_resource type="Texture2D" uid="uid://lyvsp7dkier1" path="res://assets/Spritess/Science.png" id="16_qmbjn"]
 
-[node name="InterfaceMain" type="VFlowContainer" unique_id=84392209]
+[node name="InterfaceMain" type="GridContainer" unique_id=562162708]
+custom_minimum_size = Vector2(10, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 56.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("1")
+columns = 2
 script = ExtResource("2")
 
-[node name="CurrentFunds" type="Label" parent="." unique_id=133853227]
+[node name="BooksNode" type="GridContainer" parent="." unique_id=755798135]
+layout_mode = 2
+columns = 2
+
+[node name="CurrentFunds" type="Label" parent="BooksNode" unique_id=133853227]
 layout_mode = 2
 theme = ExtResource("1")
 text = "Funds: "
 
-[node name="Sprite2D" type="Sprite2D" parent="CurrentFunds" unique_id=1195529731]
+[node name="Sprite2D" type="Sprite2D" parent="BooksNode/CurrentFunds" unique_id=1195529731]
 position = Vector2(380, 10)
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("3_8xuho")
 
-[node name="CurrentPaper" type="Label" parent="." unique_id=1329043748]
+[node name="CurrentPaper" type="Label" parent="BooksNode" unique_id=1329043748]
 layout_mode = 2
 theme = ExtResource("1")
 text = "Paper: "
 
-[node name="Sprite2D" type="Sprite2D" parent="CurrentPaper" unique_id=2012077495]
+[node name="Sprite2D" type="Sprite2D" parent="BooksNode/CurrentPaper" unique_id=2012077495]
 position = Vector2(380, 10)
 scale = Vector2(0.01, 0.01)
 texture = ExtResource("4_q7hj1")
 
-[node name="CurrentInk" type="Label" parent="." unique_id=1117923476]
+[node name="CurrentInk" type="Label" parent="BooksNode" unique_id=1117923476]
 layout_mode = 2
 theme = ExtResource("1")
 text = "Ink: "
 
-[node name="Sprite2D" type="Sprite2D" parent="CurrentInk" unique_id=721023359]
+[node name="Sprite2D" type="Sprite2D" parent="BooksNode/CurrentInk" unique_id=721023359]
 position = Vector2(380, 10)
 scale = Vector2(0.03, 0.03)
 texture = ExtResource("5_p3kdg")
 
-[node name="CurrentBooks" type="Label" parent="." unique_id=1572623679]
+[node name="CurrentBooks" type="Label" parent="BooksNode" unique_id=1572623679]
 layout_mode = 2
 theme = ExtResource("1")
 text = "Books: "
 
-[node name="Sprite2D" type="Sprite2D" parent="CurrentBooks" unique_id=1442828967]
+[node name="Sprite2D" type="Sprite2D" parent="BooksNode/CurrentBooks" unique_id=1442828967]
 position = Vector2(380, 10)
 scale = Vector2(0.03, 0.03)
 texture = ExtResource("6_t8sor")
 
-[node name="OptionsPaper" type="HFlowContainer" parent="." unique_id=2078852095]
+[node name="OptionsPaper" type="HFlowContainer" parent="BooksNode" unique_id=2078852095]
 layout_mode = 2
 
-[node name="QtyPaper" type="SpinBox" parent="OptionsPaper" unique_id=928175628]
+[node name="QtyPaper" type="SpinBox" parent="BooksNode/OptionsPaper" unique_id=928175628]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1")
 prefix = "Paper:"
+script = ExtResource("7_t8sor")
 
-[node name="BuyPaper" type="Button" parent="OptionsPaper" unique_id=1187295043]
+[node name="BuyPaper" type="Button" parent="BooksNode/OptionsPaper" unique_id=1187295043]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Buy"
 
-[node name="OptionsInk" type="HFlowContainer" parent="." unique_id=1603982199]
+[node name="OptionsInk" type="HFlowContainer" parent="BooksNode" unique_id=1603982199]
 layout_mode = 2
 
-[node name="QtyInk" type="SpinBox" parent="OptionsInk" unique_id=134087782]
+[node name="QtyInk" type="SpinBox" parent="BooksNode/OptionsInk" unique_id=134087782]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1")
 prefix = "Ink:"
+script = ExtResource("8_m5yi1")
 
-[node name="BuyInk" type="Button" parent="OptionsInk" unique_id=2146224671]
+[node name="BuyInk" type="Button" parent="BooksNode/OptionsInk" unique_id=2146224671]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Buy"
 
-[node name="OptionsBooks" type="HFlowContainer" parent="." unique_id=2132236016]
+[node name="OptionsBooks" type="HFlowContainer" parent="BooksNode" unique_id=2132236016]
 layout_mode = 2
 
-[node name="QtyBooks" type="SpinBox" parent="OptionsBooks" unique_id=1240609466]
+[node name="QtyBooks" type="SpinBox" parent="BooksNode/OptionsBooks" unique_id=1240609466]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1")
 prefix = "Books:"
+script = ExtResource("9_atxy4")
 
-[node name="MakeBooks" type="Button" parent="OptionsBooks" unique_id=789521227]
+[node name="MakeBooks" type="Button" parent="BooksNode/OptionsBooks" unique_id=789521227]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Make"
 
-[node name="SellBooks" type="Button" parent="OptionsBooks" unique_id=1220381253]
+[node name="SellBooks" type="Button" parent="BooksNode/OptionsBooks" unique_id=1220381253]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Sell"
 
-[node name="Timer" type="Timer" parent="." unique_id=1386416223]
+[node name="UnlockTools" type="Button" parent="BooksNode" unique_id=1456846032]
+layout_mode = 2
+text = "Unlock next stage"
+
+[node name="BlankSpace" type="Label" parent="." unique_id=1071902912]
+layout_mode = 2
+theme = ExtResource("1")
+text = "x Paper + x Ink = x Book"
+
+[node name="ToolsNode" type="GridContainer" parent="." unique_id=1471684491]
+visible = false
+layout_mode = 2
+columns = 2
+
+[node name="CurrentFunds2" type="Label" parent="ToolsNode" unique_id=138581224]
+layout_mode = 2
+theme = ExtResource("1")
+text = "Funds: "
+
+[node name="Sprite2D" type="Sprite2D" parent="ToolsNode/CurrentFunds2" unique_id=133847449]
+position = Vector2(380, 10)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("3_8xuho")
+
+[node name="CurrentWood" type="Label" parent="ToolsNode" unique_id=1367403946]
+layout_mode = 2
+theme = ExtResource("1")
+text = "Wood: "
+
+[node name="Sprite2D" type="Sprite2D" parent="ToolsNode/CurrentWood" unique_id=2132685520]
+position = Vector2(380, 10)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("10_dnlm2")
+
+[node name="CurrentMetal" type="Label" parent="ToolsNode" unique_id=1338926911]
+layout_mode = 2
+theme = ExtResource("1")
+text = "Metal: "
+
+[node name="Sprite2D" type="Sprite2D" parent="ToolsNode/CurrentMetal" unique_id=52572202]
+position = Vector2(380, 10)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("11_vf3i2")
+
+[node name="CurrentTools" type="Label" parent="ToolsNode" unique_id=256263013]
+layout_mode = 2
+theme = ExtResource("1")
+text = "Tools: "
+
+[node name="Sprite2D" type="Sprite2D" parent="ToolsNode/CurrentTools" unique_id=19889915]
+position = Vector2(380, 10)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("12_hm0cs")
+
+[node name="OptionsWood" type="HFlowContainer" parent="ToolsNode" unique_id=799626683]
+layout_mode = 2
+
+[node name="QtyWood" type="SpinBox" parent="ToolsNode/OptionsWood" unique_id=792014]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1")
+prefix = "Wood:"
+script = ExtResource("13_ekh0m")
+
+[node name="BuyWood" type="Button" parent="ToolsNode/OptionsWood" unique_id=749030916]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Buy"
+
+[node name="OptionsMetal" type="HFlowContainer" parent="ToolsNode" unique_id=682049318]
+layout_mode = 2
+
+[node name="QtyMetal" type="SpinBox" parent="ToolsNode/OptionsMetal" unique_id=2040779044]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1")
+prefix = "Metal:"
+script = ExtResource("13_hm0cs")
+
+[node name="BuyMetal" type="Button" parent="ToolsNode/OptionsMetal" unique_id=255748436]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Buy"
+
+[node name="OptionsTools" type="HFlowContainer" parent="ToolsNode" unique_id=1703006746]
+layout_mode = 2
+
+[node name="QtyTools" type="SpinBox" parent="ToolsNode/OptionsTools" unique_id=1419787175]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1")
+prefix = "Tools:"
+script = ExtResource("15_168ww")
+
+[node name="MakeTools" type="Button" parent="ToolsNode/OptionsTools" unique_id=425719592]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Make"
+
+[node name="SellTools" type="Button" parent="ToolsNode/OptionsTools" unique_id=2009005880]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sell"
+
+[node name="UnlockBuildings" type="Button" parent="ToolsNode" unique_id=1353082923]
+layout_mode = 2
+text = "Unlock buildings"
+
+[node name="BlankSpace2" type="Label" parent="." unique_id=1124311425]
+visible = false
+layout_mode = 2
+theme = ExtResource("1")
+text = "x Wood + x Metal = x Tools"
+
+[node name="BuildingsNode" type="GridContainer" parent="." unique_id=497376516]
+visible = false
+layout_mode = 2
+columns = 2
+
+[node name="CurrentFunds3" type="Label" parent="BuildingsNode" unique_id=530411662]
+layout_mode = 2
+theme = ExtResource("1")
+text = "Funds: "
+
+[node name="Sprite2D" type="Sprite2D" parent="BuildingsNode/CurrentFunds3" unique_id=1185158865]
+position = Vector2(380, 10)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("3_8xuho")
+
+[node name="CurrentScience" type="Label" parent="BuildingsNode" unique_id=519143002]
+layout_mode = 2
+theme = ExtResource("1")
+text = "Science: "
+
+[node name="Sprite2D" type="Sprite2D" parent="BuildingsNode/CurrentScience" unique_id=1418016042]
+position = Vector2(380, 10)
+scale = Vector2(0.003, 0.003)
+texture = ExtResource("16_qmbjn")
+
+[node name="CurrentPaper" type="Label" parent="BuildingsNode" unique_id=949541165]
+visible = false
+layout_mode = 2
+theme = ExtResource("1")
+text = "Paper: "
+
+[node name="Sprite2D" type="Sprite2D" parent="BuildingsNode/CurrentPaper" unique_id=138007012]
+position = Vector2(380, 10)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("4_q7hj1")
+
+[node name="CurrentInk" type="Label" parent="BuildingsNode" unique_id=1220178140]
+visible = false
+layout_mode = 2
+theme = ExtResource("1")
+text = "Ink: "
+
+[node name="Sprite2D" type="Sprite2D" parent="BuildingsNode/CurrentInk" unique_id=2920890]
+position = Vector2(380, 10)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("5_p3kdg")
+
+[node name="CurrentBooks" type="Label" parent="BuildingsNode" unique_id=649744281]
+visible = false
+layout_mode = 2
+theme = ExtResource("1")
+text = "Books: "
+
+[node name="Sprite2D" type="Sprite2D" parent="BuildingsNode/CurrentBooks" unique_id=2046221785]
+position = Vector2(380, 10)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("6_t8sor")
+
+[node name="CurrentWood" type="Label" parent="BuildingsNode" unique_id=1687446250]
+visible = false
+layout_mode = 2
+theme = ExtResource("1")
+text = "Wood: "
+
+[node name="Sprite2D" type="Sprite2D" parent="BuildingsNode/CurrentWood" unique_id=445416174]
+position = Vector2(380, 10)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("10_dnlm2")
+
+[node name="CurrentMetal" type="Label" parent="BuildingsNode" unique_id=748410789]
+visible = false
+layout_mode = 2
+theme = ExtResource("1")
+text = "Metal: "
+
+[node name="Sprite2D" type="Sprite2D" parent="BuildingsNode/CurrentMetal" unique_id=1453213990]
+position = Vector2(380, 10)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("11_vf3i2")
+
+[node name="CurrentTools" type="Label" parent="BuildingsNode" unique_id=1174188639]
+visible = false
+layout_mode = 2
+theme = ExtResource("1")
+text = "Tools: "
+
+[node name="Sprite2D" type="Sprite2D" parent="BuildingsNode/CurrentTools" unique_id=1704525655]
+position = Vector2(380, 10)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("12_hm0cs")
+
+[node name="OptionsPaper" type="HFlowContainer" parent="BuildingsNode" unique_id=1683155160]
+layout_mode = 2
+
+[node name="QtyPaper" type="SpinBox" parent="BuildingsNode/OptionsPaper" unique_id=1120460272]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1")
+prefix = "Paper Mill:"
+
+[node name="BuyPaper" type="Button" parent="BuildingsNode/OptionsPaper" unique_id=1060653711]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Buy"
+
+[node name="OptionsInk" type="HFlowContainer" parent="BuildingsNode" unique_id=1505437296]
+layout_mode = 2
+
+[node name="QtyInk" type="SpinBox" parent="BuildingsNode/OptionsInk" unique_id=1372141437]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1")
+prefix = "Art Studio:"
+
+[node name="BuyInk" type="Button" parent="BuildingsNode/OptionsInk" unique_id=44027864]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Buy"
+
+[node name="OptionsBooks" type="HFlowContainer" parent="BuildingsNode" unique_id=207509151]
+layout_mode = 2
+
+[node name="QtyBooks" type="SpinBox" parent="BuildingsNode/OptionsBooks" unique_id=319582430]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1")
+prefix = "Printery:"
+
+[node name="MakeBooks" type="Button" parent="BuildingsNode/OptionsBooks" unique_id=1963449786]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Make"
+
+[node name="SellBooks" type="Button" parent="BuildingsNode/OptionsBooks" unique_id=1262347540]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sell"
+
+[node name="OptionsWood" type="HFlowContainer" parent="BuildingsNode" unique_id=2130007156]
+layout_mode = 2
+
+[node name="QtyWood" type="SpinBox" parent="BuildingsNode/OptionsWood" unique_id=1887476796]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1")
+prefix = "Sawmill:"
+
+[node name="BuyWood" type="Button" parent="BuildingsNode/OptionsWood" unique_id=237096754]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Buy"
+
+[node name="OptionsMetal" type="HFlowContainer" parent="BuildingsNode" unique_id=511912346]
+layout_mode = 2
+
+[node name="QtyMetal" type="SpinBox" parent="BuildingsNode/OptionsMetal" unique_id=634168430]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1")
+prefix = "Mine:"
+
+[node name="BuyMetal" type="Button" parent="BuildingsNode/OptionsMetal" unique_id=146639427]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Buy"
+
+[node name="OptionsTools" type="HFlowContainer" parent="BuildingsNode" unique_id=1981143345]
+layout_mode = 2
+
+[node name="QtyTools" type="SpinBox" parent="BuildingsNode/OptionsTools" unique_id=130859779]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1")
+prefix = "Workshop:"
+
+[node name="MakeTools" type="Button" parent="BuildingsNode/OptionsTools" unique_id=2014482446]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Make"
+
+[node name="SellTools" type="Button" parent="BuildingsNode/OptionsTools" unique_id=980831080]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sell"
+
+[node name="OptionsTools2" type="HFlowContainer" parent="BuildingsNode" unique_id=792322995]
+layout_mode = 2
+
+[node name="QtyTools" type="SpinBox" parent="BuildingsNode/OptionsTools2" unique_id=1651590747]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1")
+prefix = "Library:"
+
+[node name="MakeTools" type="Button" parent="BuildingsNode/OptionsTools2" unique_id=1042353667]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Buy"
+
+[node name="UnlockBuildings" type="Button" parent="BuildingsNode" unique_id=1558932850]
+layout_mode = 2
+text = "Unlock upgrades"
+
+[node name="BlankSpace3" type="Label" parent="." unique_id=1483416772]
+visible = false
+layout_mode = 2
+theme = ExtResource("1")
+text = "10x tools + 2500x Money = x Autoproducers
+
+200x books + 10000x Money = x Libraries"
+
+[node name="Timer" type="Timer" parent="." unique_id=586612139]
 autostart = true
 
-[connection signal="button_down" from="OptionsPaper/BuyPaper" to="." method="_on_Buy_Paper_button_down"]
-[connection signal="button_down" from="OptionsInk/BuyInk" to="." method="_on_Buy_Ink_button_down"]
-[connection signal="button_down" from="OptionsBooks/MakeBooks" to="." method="_on_Make_Books_button_down"]
-[connection signal="button_down" from="OptionsBooks/SellBooks" to="." method="_on_Sell_Books_button_down"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="button_down" from="BooksNode/OptionsPaper/BuyPaper" to="." method="_on_Buy_Paper_button_down"]
+[connection signal="button_down" from="BooksNode/OptionsInk/BuyInk" to="." method="_on_Buy_Ink_button_down"]
+[connection signal="button_down" from="BooksNode/OptionsBooks/MakeBooks" to="." method="_on_Make_Books_button_down"]
+[connection signal="button_down" from="BooksNode/OptionsBooks/SellBooks" to="." method="_on_Sell_Books_button_down"]
+[connection signal="button_down" from="BooksNode/UnlockTools" to="." method="_on_unlock_tools_button_down"]
+[connection signal="button_down" from="ToolsNode/OptionsWood/BuyWood" to="." method="_on_buy_wood_button_down"]
+[connection signal="button_down" from="ToolsNode/OptionsMetal/BuyMetal" to="." method="_on_buy_metal_button_down"]
+[connection signal="button_down" from="ToolsNode/OptionsTools/MakeTools" to="." method="_on_make_tools_button_down"]
+[connection signal="button_down" from="ToolsNode/OptionsTools/SellTools" to="." method="_on_sell_tools_button_down"]
+[connection signal="button_down" from="ToolsNode/UnlockBuildings" to="." method="_on_unlock_buildings_button_down"]
